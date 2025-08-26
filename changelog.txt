@@ -1,8 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+Date: 2025-08-26
+  Features:
+    - Added missing optional dependencies and fixed existing one
+    - Updated trigger science for fermentation bacteria to require building oil rig 
+---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 2025-08-26
   Features:
-    - Added missing optional dependencies and fixed existing one (sorry maraxsis)
+    - Added missing optional dependencies and fixed existing one
     - Updated trigger science for fermentation bacteria to require building oil rig 
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
