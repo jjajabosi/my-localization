@@ -1,56 +1,58 @@
 # Planet Pelagos
 ![welcome_on_pelagos](readme_images/welcome_on_pelagos.png)
-Welcome on Pelagos. Insular planet rich in tropical coconut palms, methane deposits, and mysterious lifeforms. 
-Harvest coconuts, process them into oil, sealant, and biofuels ,experiment with fermentation and use high-temperature 
-calciners to improve smelting processes in your factory. 
+Welcome to Pelagos. Insular planet rich in tropical coconut palms, methane deposits, and mysterious lifeforms. 
+Harvest coconuts, process them into oil, sealant, and biofuels, experiment with fermentation, and use high-temperature calciners 
+to improve smelting processes in your factory. 
 
 ## Build around THE Cargo Ships mod
 [Cargo Ships mod](https://mods.factorio.com/mod/cargo-ships)
-- Essential Dependancy
-- I love Cargo ships mod, but i always find it difficult to fit into vanilla game.
+- Essential dependency
+- I love Cargo ships mod, but I always find it difficult to fit into vanilla game.
 - I have tried dreadworks, but it ruins gleba which is my favourite planet. 
-- So I created planet-mod designed around using ships as main transportation option.
+- So I created a planet-mod designed around using ships as the main transportation option.
 
 ## Canal Excavator mod
 [Canal Excavator mod](https://mods.factorio.com/mod/canal-excavator)
-- Essential dependancy
+- Essential dependency
 - You can't find stone patches on Pelagos. But you can mine ground with Canal Excavator.
-1. Mine Stone on pelagos to unlock it
-2. Craft Excavatable surface
-3. Mine it with excavator to get some stone
+1. Mine big rock on Pelagos to unlock it.
+2. Craft an Excavatable surface
+3. Mine it with the excavator to get some stone
 
 ## Calciner
 ![calciner](readme_images/calciner.png)
-- Big fluid powered furnace. 
+- A big fluid-powered furnace. 
 - Can and should be used like regular furnace.
-- Extra 50% productivity
-- Allows the high-temperature purification and transformation of raw materials into refined minerals
+- Provides an extra 50% productivity.
+- Allows the high-temperature purification and transformation of raw materials into refined minerals.
 
-## Giving new live to neglected fish related vanilla mechanics
+## Giving new life to neglected fish related vanilla mechanics
 ![fishing_inserter](readme_images/fishing_inserter.png)
-Fish are good starting source of nutrients on Pelagos. And they are essential for progression
-- (vanilla mechanic) You can place inserter near the water to catch fish. Remember to use negative filter (for fish) on your cargo ships unloading stations
-- (vanilla mechanic) You can use fish breeding recipe on pelagos
+Fish are a good starting source of nutrients on Pelagos. They are also essential for progression.
+- (vanilla mechanic) Fishing inserters. You can place an inserter near the water to catch fish.Remember to use a negative filter (for fish) on your cargo ship unloading stations.
+- (vanilla mechanic) Fish breeding recipe. You can use the fish breeding recipe on Pelagos.
 
 ## Integrations with other planet-mods: 
 ### Arig
-- Pelagos Landfill productivity also affect Sandstone foundation if Arig is installed.
+- Pelagos Landfill productivity also affects Sandstone foundation
 ### Maraxis
-- Coconut Sealant can be turned into Super Sealant Substance if maraxis is installed. 
-- Recipe enables itself when you Research "Project Seadragon" just like regular Super Sealant Substance recipe
+- Coconut Sealant can be turned into Super Sealant Substance if Maraxis is installed. 
+- Recipe enables itself when you research "Project Seadragon" just like regular Super Sealant Substance recipe
 ### Cerys
-- Pelagos Methane overrides Cerys methane if Cerys is installed. 
+- Pelagos Methane overrides Cerys Methane if Cerys is installed. 
 - Methane is essential resource on Pelagos and it is almost unused on Cerys (vented into atmosphere). 
-- With Pelagos You can now barel up methane and ship to other planets.
+- With Pelagos you can now barrel up Methane and ship to other planets.
 ### Wood themed mods
-- In addition to coconuts coconut palm gives small ammount of wood
-- Calciner allows for wood carbonization (turning wood into coal)
-- Pelagos research allows for wood spoiling in biochaber (turning wood into spoilage)
+- In addition to coconuts, the coconut palm gives a small amount of wood.
+- Calciner allows wood carbonization (turning wood into coal).
+- Pelagos research allows wood spoiling in a biochamber (turning wood into spoilage).
 
 ## Issues?
-- DM me on discord or create issue on github.
+- DM me on Discord (you can find me on the official Factorio Discord), create an issue on GitHub, or use the discussion tab on the mod portal.
 
-## Credits
+## Credits and thanks
+- Thanks to the existence of [Cargo Ships mod](https://mods.factorio.com/mod/cargo-ships) and [Canal Excavator mod](https://mods.factorio.com/mod/canal-excavator) creating this mod was made possible
+
 ## TODOs
 - [ ] Tips and tricks
-- [ ] Calciner as separate mod
+- [ ] Calciner as a separate mod
