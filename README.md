@@ -1,5 +1,5 @@
 # Planet Pelagos
-![welcome_on_pelagos](readme_images/welcome_on_pelagos.png)
+![welcome_on_pelagos](https://github.com/Talandar99/pelagos/blob/main/readme_images/welcome_on_pelagos.png)
 Welcome to Pelagos. Insular planet rich in tropical coconut palms, methane deposits, and mysterious lifeforms. 
 Harvest coconuts, process them into oil, sealant, and biofuels, experiment with fermentation, and use high-temperature calciners 
 to improve smelting processes in your factory. 
@@ -20,14 +20,14 @@ to improve smelting processes in your factory.
 3. Mine it with the excavator to get some stone
 
 ## Calciner
-![calciner](readme_images/calciner.png)
+![calciner](https://raw.githubusercontent.com/Talandar99/pelagos/refs/heads/main/readme_images/calciner.png)
 - A big fluid-powered furnace. 
 - Can and should be used like regular furnace.
 - Provides an extra 50% productivity.
 - Allows the high-temperature purification and transformation of raw materials into refined minerals.
 
 ## Giving new life to neglected fish related vanilla mechanics
-![fishing_inserter](readme_images/fishing_inserter.png)
+![fishing_inserter](https://raw.githubusercontent.com/Talandar99/pelagos/refs/heads/main/readme_images/fishing_inserter.png)
 Fish are a good starting source of nutrients on Pelagos. They are also essential for progression.
 - (vanilla mechanic) Fishing inserters. You can place an inserter near the water to catch fish.Remember to use a negative filter (for fish) on your cargo ship unloading stations.
 - (vanilla mechanic) Fish breeding recipe. You can use the fish breeding recipe on Pelagos.
