@@ -78,8 +78,8 @@ data:extend({
 		},
 		prerequisites = { "deep_sea_oil_extraction", "canex-excavator" },
 		research_trigger = {
-			type = "mine-entity",
-			entity = "methane",
+			type = "build-entity",
+			entity = "oil_rig",
 		},
 		order = "ea[pelagos]",
 	},

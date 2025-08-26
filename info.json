@@ -1,6 +1,6 @@
 {
     "name": "pelagos",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "title": "Planet Pelagos",
     "author": "Talandar",
     "dependencies": [
@@ -11,7 +11,8 @@
         "canal-excavator",
         "cargo-ships",
         "? Cerys-Moon-of-Fulgora",
-        "? maraxis"
+        "? planetaris-unbounded",
+        "? maraxsis"
     ],
     "description": "",
     "factorio_version": "2.0"
