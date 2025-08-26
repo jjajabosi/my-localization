@@ -3,7 +3,7 @@ Version: 0.0.2
 Date: 2025-08-26
   Features:
     - Added missing optional dependencies and fixed existing one (sorry maraxsis)
-    - Updated trigger science for fermentation bacteria to require building oil rig in addition to mining methane
+    - Updated trigger science for fermentation bacteria to require building oil rig 
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 2025-08-26
