@@ -1,6 +1,6 @@
 # Planet Pelagos
 ![welcome_on_pelagos](https://github.com/Talandar99/pelagos/blob/main/readme_images/welcome_on_pelagos.png)
-Welcome to Pelagos. Insular planet rich in tropical coconut palms, methane deposits, and mysterious lifeforms. 
+Welcome to Pelagos. Insular planet rich in tropical coconut palms, methane deposits, basic metals, and minor lifeforms. 
 Harvest coconuts, process them into oil, sealant, and biofuels, experiment with fermentation, and use high-temperature calciners 
 to improve smelting processes in your factory. 
 
