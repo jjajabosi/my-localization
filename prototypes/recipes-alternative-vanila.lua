@@ -147,9 +147,9 @@ data:extend({
 		ingredients = {
 			{ type = "fluid", name = "ethanol", amount = 20 },
 			{ type = "item", name = "iron-plate", amount = 1 },
-			{ type = "item", name = "copper-plate", amount = 1 },
+			{ type = "item", name = "activated-carbon", amount = 1 },
 		},
-		results = { { type = "item", name = "battery", amount = 1 } },
+		results = { { type = "item", name = "battery", amount = 2 } },
 		crafting_machine_tint = {
 			primary = { r = 0.965, g = 0.482, b = 0.338, a = 1.000 }, -- #f67a56ff
 			secondary = { r = 0.831, g = 0.560, b = 0.222, a = 1.000 }, -- #d38e38ff

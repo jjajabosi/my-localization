@@ -176,7 +176,7 @@ local function MapGen_Pelagos()
 				},
 			},
 		},
-		water = 0.75, --was 0.8
+		water = 0.8, --was 0.8
 		terrain_segmentation = "very-high",
 		default_tile = "sand-1",
 	}
@@ -191,7 +191,7 @@ PlanetsLib:extend({
 		label_orientation = 0.15,
 		orbit = {
 			parent = { type = "space-location", name = "star" },
-			distance = 17,
+			distance = 20,
 			orientation = 0.11,
 		},
 		subgroup = "planets",
@@ -209,7 +209,7 @@ PlanetsLib:extend({
 			-- There is no stat for robot energy usage, it's (gravity/pressure) * 100x
 			["day-night-cycle"] = 10 * minute,
 			["magnetic-field"] = 50,
-			["solar-power"] = 120,
+            ["solar-power"] = 50,
 			pressure = 1500,
 			gravity = 15,
 		},
@@ -243,7 +243,7 @@ PlanetsLib:extend({
 				{ 0.75, "__space-age__/graphics/lut/gleba-8-morning.png" },
 			},
 		},
-		solar_power_in_space = 200,
+        solar_power_in_space = 200,
 		platform_procession_set = {
 			arrival = { "planet-to-platform-b" },
 			departure = { "platform-to-planet-a" },

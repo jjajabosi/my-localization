@@ -62,4 +62,32 @@ data:extend({
 		results = { { type = "item", name = "calcite", amount = 1 } },
 		auto_recycle = false,
 	},
+    {
+      type = "recipe",
+      name = "activated-carbon",
+      category = "calcining",
+      enabled = false,
+      energy_required = 8,
+	  allow_productivity = true,
+	  ingredients = {
+	    { type = "item", name = "carbon", amount = 2 },
+	  },
+      results = { { type = "item", name = "activated-carbon", amount = 1 } },
+      auto_recycle = false,
+    },
+
+  {
+    type = "recipe",
+    name = "calciner-advanced-steel-smelting",
+    icon = "__pelagos__/graphics/calciner-advanced-steel-smelting.png",
+    category = "calcining",
+    enabled = false,
+    energy_required = 16,
+    ingredients = {
+      {type = "item", name = "iron-plate", amount = 5},
+      {type = "item", name = "activated-carbon", amount = 1}
+    },
+    results = {{type="item", name="steel-plate", amount=2}},
+    allow_productivity = true
+  },
 })

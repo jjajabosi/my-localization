@@ -1,7 +1,29 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.5
+Date: 2025-08-28
+  Changes:
+    - reduced island sizes
+    - reduced wood from harvesting coconut palms 4 -> 3
+    - reduced solar power and moved pelagos to the same orbit as gleba
+    - reduced propability to get coconut seed 
+    - added new resource active carbon to tie calciner stronger with planet progression
+    - added new recipe for steel that utilizes active carbon
+    - added tips and tricks for Excavator
+    - updated tech tree.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.4
+Date: 2025-08-27
+  Changes:
+    - added fuel_value property to petroleum,light oil,heavy oil and crude oil so it will be present even without maraxis installed
+    - added fuel_value property to puff-gas for compatibility with boompuff agriculture (puff gas can now be used as calciner fuel)
+    - added Pelagos briefing with simulation to factoriopedia
+    - added Coconut processing entry to factoriopedia
+    - added Calciner entry to factoriopedia
+    - removed ethanol temperature property 
+---------------------------------------------------------------------------------------------------
 Version: 0.0.3
 Date: 2025-08-26
-  Features:
+  Changes:
     - added planet and mod description
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
@@ -12,7 +34,7 @@ Date: 2025-08-26
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 2025-08-26
-  Features:
+  Changes:
     - Release
 
 

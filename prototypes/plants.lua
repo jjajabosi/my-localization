@@ -21,7 +21,7 @@ data:extend({
 			mining_time = 0.5,
 			results = {
 				{ type = "item", name = "coconut", amount = 10 },
-				{ type = "item", name = "wood", amount = 4 },
+				{ type = "item", name = "wood", amount = 3 },
 			},
 		},
 		agricultural_tower_tint = {
@@ -97,3 +97,8 @@ data:extend({
 	},
 })
 
+local mature_palm = table.deepcopy(data.raw.plant["coconut-palm"])
+mature_palm.name = "coconut-palm-mature"
+mature_palm.growth_ticks = 1
+mature_palm.hidden_in_factoriopedia = true
+data:extend({ mature_palm })

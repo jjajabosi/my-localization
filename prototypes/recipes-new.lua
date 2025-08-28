@@ -28,7 +28,7 @@ data:extend({
 		energy_required = 1,
 		ingredients = { { type = "item", name = "coconut", amount = 1 } },
 		results = {
-			{ type = "item", name = "coconut-seed", amount = 1, probability = 0.10 },
+			{ type = "item", name = "coconut-seed", amount = 1, probability = 0.09 },
 			{ type = "item", name = "coconut-meat", amount = 2 },
 			{ type = "item", name = "coconut-husk", amount = 2 },
 		},
@@ -92,8 +92,8 @@ data:extend({
 		ingredients = {
 			{ type = "item", name = "coconut-sealant", amount = 2 },
 			{ type = "item", name = "fermentation-bacteria", amount = 3 },
-			{ type = "item", name = "carbon", amount = 2 },
-			{ type = "item", name = "calcite", amount = 1 },
+			{ type = "item", name = "activated-carbon", amount = 1 },
+			{ type = "item", name = "calcite", amount = 2 },
 		},
 		energy_required = 4,
 		results = { { type = "item", name = "pelagos-science-pack", amount = 1 } },
@@ -180,14 +180,15 @@ data:extend({
 		enabled = false,
 		allow_productivity = true,
 		reset_freshness_on_craft = true,
-		energy_required = 7,
+		energy_required = 6,
 		ingredients = {
-			{ type = "item", name = "fermentation-bacteria", amount = 3 },
-			{ type = "item", name = "nutrients", amount = 20 },
+			{ type = "item",  name = "fermentation-bacteria", amount = 3 },
+			{ type = "item",  name = "nutrients", amount = 20 },
 			{ type = "fluid", name = "water", amount = 100 },
+            { type = "item",  name = "activated-carbon", amount = 1 }, 
 		},
 		results = {
-			{ type = "fluid", name = "ethanol", amount = 100 },
+			{ type = "fluid", name = "ethanol", amount = 120 },
 		},
 		crafting_machine_tint = {
 			primary = { r = 0.5, g = 0.8, b = 1.0, a = 1.000 },
