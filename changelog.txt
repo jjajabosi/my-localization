@@ -1,15 +1,15 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.0.5
+Version: 0.1.0
 Date: 2025-08-28
   Changes:
+    - added new resource activated carbon to tie calciner stronger with planet progression
+    - added new recipe for steel that utilizes active carbon
+    - added tips and tricks for Excavator
+    - updated tech tree.
     - reduced island sizes
     - reduced wood from harvesting coconut palms 4 -> 3
     - reduced solar power and moved pelagos to the same orbit as gleba
     - reduced propability to get coconut seed 
-    - added new resource active carbon to tie calciner stronger with planet progression
-    - added new recipe for steel that utilizes active carbon
-    - added tips and tricks for Excavator
-    - updated tech tree.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.4
 Date: 2025-08-27
