@@ -1,8 +1,13 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.1
+Version: 0.1.3
 Date: 2025-08-29
   Changes:
-    - forces autoplace setting for palms to be "sand-1" to make sure biomes mods won't override this by accident
+    - added compatibility for "AAI Vechicles:Ironclad" and "Ironclad gunboat and mortar turret"
+---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2025-08-29
+  Changes:
+    - forces autoplace setting for palms to be "sand-1" to make sure biomes mods won't override this by accident (fixes compatibility issues with alien biomes)
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 2025-08-28

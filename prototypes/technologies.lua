@@ -76,7 +76,7 @@ data:extend({
 			{ type = "unlock-recipe", recipe = "fermentation-bacteria" },
 			{ type = "unlock-recipe", recipe = "fermentation-bacteria-cultivation" },
 		},
-		prerequisites = { "deep_sea_oil_extraction"},
+		prerequisites = { "deep_sea_oil_extraction" },
 		research_trigger = {
 			type = "build-entity",
 			entity = "oil_rig",
@@ -116,9 +116,9 @@ data:extend({
 			{ type = "unlock-recipe", recipe = "calciner-wood-carbonization" },
 			{ type = "unlock-recipe", recipe = "calciner-coconut-husk-carbonization" },
 			{ type = "unlock-recipe", recipe = "calciner-advanced-steel-smelting" },
-            { type = "unlock-recipe", recipe = "activated-carbon"},
+			{ type = "unlock-recipe", recipe = "activated-carbon" },
 		},
-		prerequisites = { "coconut-processing-technology" , "canex-excavator"},
+		prerequisites = { "coconut-processing-technology", "canex-excavator" },
 		research_trigger = {
 			type = "build-entity",
 			entity = "canex-excavator",
@@ -334,4 +334,40 @@ if tech and tech.effects then
 	table.insert(tech.effects, { type = "unlock-recipe", recipe = "pelagos-express-transport-belt" })
 	table.insert(tech.effects, { type = "unlock-recipe", recipe = "pelagos-express-underground-belt" })
 	table.insert(tech.effects, { type = "unlock-recipe", recipe = "pelagos-express-splitter" })
+end
+
+-- cargo  ships things
+if mods["cargo-ships"] then
+	local t = data.raw["technology"]["oversea-energy-distribution"]
+	t.prerequisites = { "pelagos-science-pack" }
+	t.effects = {
+		{ type = "unlock-recipe", recipe = "floating-electric-pole" },
+	}
+	t.unit = {
+		count = 1000,
+		ingredients = {
+			{ "automation-science-pack", 1 },
+			{ "logistic-science-pack", 1 },
+			{ "chemical-science-pack", 1 },
+			{ "space-science-pack", 1 },
+			{ "pelagos-science-pack", 1 },
+		},
+		time = 30,
+	}
+end
+
+if mods["cargo-ships"] then
+	local t = data.raw["technology"]["tank_ship"]
+	t.prerequisites = { "pelagos-science-pack" }
+	t.unit = {
+		count = 1500,
+		ingredients = {
+			{ "automation-science-pack", 1 },
+			{ "logistic-science-pack", 1 },
+			{ "chemical-science-pack", 1 },
+			{ "space-science-pack", 1 },
+			{ "pelagos-science-pack", 1 },
+		},
+		time = 30,
+	}
 end

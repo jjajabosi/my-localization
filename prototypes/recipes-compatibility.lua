@@ -4,7 +4,7 @@ if mods["maraxsis"] then
 			type = "recipe",
 			category = "calcining",
 			name = "pelagos-maraxsis-super-sealant-substance",
-		    icon = "__pelagos__/graphics/sealant-super-sealant.png",
+			icon = "__pelagos__/graphics/sealant-super-sealant.png",
 			enabled = false,
 			allow_productivity = true,
 			energy_required = 5,
@@ -21,4 +21,88 @@ if mods["maraxsis"] then
 	if tech and tech.effects then
 		table.insert(tech.effects, { type = "unlock-recipe", recipe = "pelagos-maraxsis-super-sealant-substance" })
 	end
+end
+
+if mods["cargo-ships"] then
+	if data.raw["recipe"]["floating-electric-pole"] then
+		data.raw["recipe"]["floating-electric-pole"].ingredients = {
+			{ type = "item", name = "iron-plate", amount = 5 },
+			{ type = "item", name = "big-electric-pole", amount = 20 },
+			{ type = "item", name = "barrel", amount = 4 },
+			{ type = "item", name = "coconut-sealant", amount = 4 },
+		}
+	end
+
+	if data.raw["recipe"]["boat"] then
+		data.raw["recipe"]["boat"].ingredients = {
+			{ type = "item", name = "steel-plate", amount = 40 },
+			{ type = "item", name = "engine-unit", amount = 15 },
+			{ type = "item", name = "electronic-circuit", amount = 6 },
+			{ type = "item", name = "coconut-sealant", amount = 30 },
+		}
+	end
+
+	if data.raw["recipe"]["cargo_ship"] then
+		data.raw["recipe"]["cargo_ship"].ingredients = {
+			{ type = "item", name = "steel-plate", amount = 220 },
+			{ type = "item", name = "engine-unit", amount = 50 },
+			{ type = "item", name = "electronic-circuit", amount = 20 },
+			{ type = "item", name = "coconut-sealant", amount = 80 },
+		}
+	end
+
+	if data.raw["recipe"]["oil_tanker"] then
+		data.raw["recipe"]["oil_tanker"].ingredients = {
+			{ type = "item", name = "steel-plate", amount = 180 },
+			{ type = "item", name = "engine-unit", amount = 50 },
+			{ type = "item", name = "electronic-circuit", amount = 20 },
+			{ type = "item", name = "coconut-sealant", amount = 80 },
+			{ type = "item", name = "storage-tank", amount = 6 },
+		}
+	end
+
+	if data.raw["recipe"]["buoy"] then
+		data.raw["recipe"]["buoy"].ingredients = {
+			{ type = "item", name = "iron-plate", amount = 5 },
+			{ type = "item", name = "barrel", amount = 2 },
+			{ type = "item", name = "coconut-sealant", amount = 2 },
+			{ type = "item", name = "electronic-circuit", amount = 2 },
+		}
+	end
+	if data.raw["recipe"]["chain_buoy"] then
+		data.raw["recipe"]["chain_buoy"].ingredients = {
+			{ type = "item", name = "iron-plate", amount = 5 },
+			{ type = "item", name = "barrel", amount = 2 },
+			{ type = "item", name = "coconut-sealant", amount = 2 },
+			{ type = "item", name = "electronic-circuit", amount = 2 },
+		}
+	end
+
+	if data.raw["recipe"]["oil_rig"] then
+		data.raw["recipe"]["oil_rig"].ingredients = {
+			{ type = "item", name = "steel-plate", amount = 200 },
+			{ type = "item", name = "electronic-circuit", amount = 50 },
+			{ type = "item", name = "pipe", amount = 100 },
+			{ type = "item", name = "steam-engine", amount = 1 },
+			{ type = "item", name = "pumpjack", amount = 5 },
+			{ type = "item", name = "coconut-sealant", amount = 300 },
+		}
+	end
+end
+-- optional compat with ironclad and it's fork
+if mods["ironclad-gunboat-and-mortar-turret-fork"] then
+	data.raw["recipe"]["ironclad-gunboat"].ingredients = {
+		{ type = "item", name = "steel-plate", amount = 100 },
+		{ type = "item", name = "engine-unit", amount = 40 },
+		{ type = "item", name = "electronic-circuit", amount = 20 },
+		{ type = "item", name = "coconut-sealant", amount = 40 },
+	}
+end
+if mods["aai-vehicles-ironclad"] then
+	data.raw["recipe"]["ironclad"].ingredients = {
+		{ type = "item", name = "steel-plate", amount = 100 },
+		{ type = "item", name = "engine-unit", amount = 40 },
+		{ type = "item", name = "electronic-circuit", amount = 20 },
+		{ type = "item", name = "coconut-sealant", amount = 40 },
+	}
 end
