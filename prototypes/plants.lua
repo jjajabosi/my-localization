@@ -85,14 +85,8 @@ data:extend({
 				},
 			},
 		},
-
 		autoplace = {
-			probability_expression = 0.001,
-			richness_expression = 1,
-			peaks = {
-				{ influence = 0.2, tile_restriction = { "sand-1" } },
-			},
-			tile_restriction = { "sand-1" },
+			-- autoplace settings are added in palm-autoplace-settings to make sure it overrides changes made by other mods
 		},
 	},
 })

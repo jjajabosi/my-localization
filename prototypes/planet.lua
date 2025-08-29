@@ -86,58 +86,58 @@ data:extend({
 	},
 })
 data:extend({
-    {
-        type = "autoplace-control",
-        name = "pelagos_rocks",
-        localised_name = { "entity-name.pelagos-big-rock" },
-        richness = false,
-        order = "a[doodad]-a[rock]-b",
-        category = "resource",
-    },
+	{
+		type = "autoplace-control",
+		name = "pelagos_rocks",
+		localised_name = { "entity-name.pelagos-big-rock" },
+		richness = false,
+		order = "a[doodad]-a[rock]-b",
+		category = "resource",
+	},
 })
 -- map generation
 data:extend({
-    {
-        type = "simple-entity",
-        name = "pelagos-big-rock",
-        icon = "__base__/graphics/icons/big-rock.png",
-        icon_size = 64,
-        flags = { "placeable-neutral" },
-        surface_conditions = {
-            {
-                property = "pressure",
-                min = 1500,
-                max = 1500,
-            },
-        },
-        minable = {
-            mining_time = 2,
-            results = {
-                { type = "item", name = "stone", amount = 30 },
-                { type = "item", name = "fermentation-bacteria", amount = 5 },
-            },
-        },
-        max_health = 500,
-        collision_box = { { -2.1, -1.0 }, { 0.7, 1.0 } },
-        selection_box = { { -2.3, -1.3 }, { 0.9, 1.2 } },
-        render_layer = "object",
-        pictures = {
-            {
-                filename = "__pelagos__/graphics/pelagos-big-rock.png",
-                width = 176,
-                height = 114,
-            },
-        },
-        autoplace = {
-            control = "pelagos_rocks",
-            order = "a[doodad]-a[rock]-b[big]",
-            probability_expression = "multiplier * control",
-            local_expressions = {
-                multiplier = 0.001,  -- dostosuj ilość spawnów
-                control = "control:pelagos_rocks:size",
-            },
-        },
-    },
+	{
+		type = "simple-entity",
+		name = "pelagos-big-rock",
+		icon = "__base__/graphics/icons/big-rock.png",
+		icon_size = 64,
+		flags = { "placeable-neutral" },
+		surface_conditions = {
+			{
+				property = "pressure",
+				min = 1500,
+				max = 1500,
+			},
+		},
+		minable = {
+			mining_time = 2,
+			results = {
+				{ type = "item", name = "stone", amount = 30 },
+				{ type = "item", name = "fermentation-bacteria", amount = 5 },
+			},
+		},
+		max_health = 500,
+		collision_box = { { -2.1, -1.0 }, { 0.7, 1.0 } },
+		selection_box = { { -2.3, -1.3 }, { 0.9, 1.2 } },
+		render_layer = "object",
+		pictures = {
+			{
+				filename = "__pelagos__/graphics/pelagos-big-rock.png",
+				width = 176,
+				height = 114,
+			},
+		},
+		autoplace = {
+			control = "pelagos_rocks",
+			order = "a[doodad]-a[rock]-b[big]",
+			probability_expression = "multiplier * control",
+			local_expressions = {
+				multiplier = 0.001, -- dostosuj ilość spawnów
+				control = "control:pelagos_rocks:size",
+			},
+		},
+	},
 })
 local function MapGen_Pelagos()
 	local map = {
@@ -209,7 +209,7 @@ PlanetsLib:extend({
 			-- There is no stat for robot energy usage, it's (gravity/pressure) * 100x
 			["day-night-cycle"] = 10 * minute,
 			["magnetic-field"] = 50,
-            ["solar-power"] = 50,
+			["solar-power"] = 50,
 			pressure = 1500,
 			gravity = 15,
 		},
@@ -243,7 +243,7 @@ PlanetsLib:extend({
 				{ 0.75, "__space-age__/graphics/lut/gleba-8-morning.png" },
 			},
 		},
-        solar_power_in_space = 200,
+		solar_power_in_space = 200,
 		platform_procession_set = {
 			arrival = { "planet-to-platform-b" },
 			departure = { "platform-to-planet-a" },
