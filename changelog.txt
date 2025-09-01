@@ -10,7 +10,6 @@ Date: 2025-09-01
         10x light oil = 1 solid fuel so 1 light oil is 1.2MJ
         20x heavy oil = 1 solid fuel so 1 heavy oil is 0.6MJ
     - changed absurd cargo ship storage size and tanker storage volume into something more reasonable. Also reduced storage of boat a little bit. 
-    - if corrundum planet mod is installed it's space connections will be updated to not overlap with pelagos sigle connection with gleba
     - boat storage, cargo ship storage size and tanker storage volume is now configurable in settings. Old value will remain until reseted to new defaults in settings
     - added setting to force small electic generator on oil rig by default to avoid error when running game
     - lifting train bridge is now hidden in factoriopedia. 

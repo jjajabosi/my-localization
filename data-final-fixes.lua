@@ -23,10 +23,3 @@ if settings.startup["pelagos-force-small-electric-generator"].value then
 		gen.fluid_box.volume = 500
 	end
 end
-
--- remove space-connection if corrundum is installed
-if mods["corrundum"] then
-	if data.raw["space-connection"]["gleba-corrundum"] then
-		data.raw["space-connection"]["gleba-corrundum"] = nil
-	end
-end
