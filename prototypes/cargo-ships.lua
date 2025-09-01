@@ -1,47 +1,73 @@
-if mods["cargo-ships"] then
-	local t = data.raw["technology"]["automated_water_transport"]
-	t.prerequisites = { "coconut-processing-technology" }
-	t.effects = {
-		{ type = "unlock-recipe", recipe = "boat" },
-		{ type = "unlock-recipe", recipe = "port" },
-		{ type = "unlock-recipe", recipe = "buoy" },
-		{ type = "unlock-recipe", recipe = "chain_buoy" },
-		{ type = "unlock-recipe", recipe = "cargo_ship" },
-	}
-	t.unit = nil
-	t.research_trigger = {
-		type = "craft-item",
-		item = "coconut-sealant",
-	}
-end
-
-if mods["cargo-ships"] then
-	local t = data.raw["technology"]["deep_sea_oil_extraction"]
-	t.prerequisites = { "automated_water_transport" }
-	t.effects = {
-		{ type = "unlock-recipe", recipe = "oil_rig" },
-	}
-	t.unit = nil
-	t.research_trigger = {
-		type = "build-entity",
-		entity = "cargo_ship",
-	}
-end
-
-if mods["cargo-ships"] then
-	data.raw["technology"]["cargo_ships"] = nil
-end
-
-if mods["cargo-ships"] then
-	data.raw["technology"]["water_transport"] = nil
-end
-
-if mods["cargo-ships"] then
-	data.raw["technology"]["automated_bridges"] = nil
-end
-
+--allow oil rig to use any fluid as fuel (it needs fuel value in order to not die randomly from lack of energy)
 local generator = data.raw["generator"]["or_power_electric"]
-
 if generator and generator.fluid_box then
 	generator.fluid_box.filter = nil
+end
+
+-- add settings to change cargo ships capacity
+local boat_inventory = settings.startup["pelagos-boat-inventory"].value
+local cargo_inventory = settings.startup["pelagos-cargoship-inventory"].value
+local tanker_capacity = settings.startup["pelagos-tanker-capacity"].value
+
+if data.raw["cargo-wagon"]["cargo_ship"] then
+	data.raw["cargo-wagon"]["cargo_ship"].inventory_size = cargo_inventory
+end
+
+if data.raw["fluid-wagon"]["oil_tanker"] then
+	data.raw["fluid-wagon"]["oil_tanker"].capacity = tanker_capacity
+end
+
+if data.raw["car"]["indep-boat"] then
+	data.raw["car"]["indep-boat"].inventory_size = boat_inventory
+end
+
+-- hide bridge and all related things
+
+-- items
+if data.raw["item"]["bridge_base"] then
+	data.raw["item"]["bridge_base"].hidden = true
+	data.raw["item"]["bridge_base"].hidden_in_factoriopedia = true
+end
+
+if data.raw["item"]["bridge_gate"] then
+	data.raw["item"]["bridge_gate"].hidden = true
+	data.raw["item"]["bridge_gate"].hidden_in_factoriopedia = true
+end
+
+-- hide train-stop entity
+if data.raw["train-stop"]["bridge_base"] then
+	local e = data.raw["train-stop"]["bridge_base"]
+	e.selectable_in_game = false
+	e.flags = {
+		"placeable-neutral",
+		"not-blueprintable",
+		"not-deconstructable",
+		"not-upgradable",
+	}
+	e.hidden_in_factoriopedia = true
+end
+
+-- hide gate entity
+if data.raw["gate"]["bridge_gate"] then
+	local g = data.raw["gate"]["bridge_gate"]
+	g.selectable_in_game = false
+	g.flags = {
+		"placeable-neutral",
+		"not-blueprintable",
+		"not-deconstructable",
+	}
+	g.hidden_in_factoriopedia = true
+end
+
+-- hide recipes
+if data.raw["recipe"]["bridge_base"] then
+	data.raw["recipe"]["bridge_base"].enabled = false
+	data.raw["recipe"]["bridge_base"].hidden = true
+	data.raw["recipe"]["bridge_base"].hidden_in_factoriopedia = true
+end
+
+if data.raw["recipe"]["bridge_gate"] then
+	data.raw["recipe"]["bridge_gate"].enabled = false
+	data.raw["recipe"]["bridge_gate"].hidden = true
+	data.raw["recipe"]["bridge_gate"].hidden_in_factoriopedia = true
 end

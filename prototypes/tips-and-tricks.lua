@@ -82,7 +82,7 @@ data:extend({
 		name = "canex-excavator",
 		tag = "[item=canex-excavator]",
 		category = "space-age",
-		order = "pelagos-c",
+		order = "pelagos-d",
 		indent = 1,
 		image = "__pelagos__/graphics/canex-tips-and-tricks.png",
 		trigger = {
@@ -95,7 +95,7 @@ data:extend({
 		name = "pelagos-calciners",
 		tag = "[item=calciner]",
 		category = "space-age",
-		order = "pelagos-d",
+		order = "pelagos-e",
 		indent = 1,
 		trigger = {
 			type = "research",

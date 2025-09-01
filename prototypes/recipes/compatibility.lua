@@ -1,28 +1,24 @@
-if mods["maraxsis"] then
-	data:extend({
-		{
-			type = "recipe",
-			category = "calcining",
-			name = "pelagos-maraxsis-super-sealant-substance",
-			icon = "__pelagos__/graphics/sealant-super-sealant.png",
-			enabled = false,
-			allow_productivity = true,
-			energy_required = 5,
-			ingredients = {
-				{ type = "item", name = "coconut-sealant", amount = 2 },
-			},
-			results = {
-				{ type = "item", name = "maraxsis-super-sealant-substance", amount = 1 },
-			},
-			auto_recycle = false,
-		},
-	})
-	local tech = data.raw.technology["maraxsis-project-seadragon"]
-	if tech and tech.effects then
-		table.insert(tech.effects, { type = "unlock-recipe", recipe = "pelagos-maraxsis-super-sealant-substance" })
+--canal-excavator
+if mods["canal-excavator"] then
+	if data.raw["recipe"]["canex-excavator"] then
+		data.raw["recipe"]["canex-excavator"].ingredients = {
+			{ type = "item", name = "steel-plate", amount = 10 },
+			{ type = "item", name = "iron-plate", amount = 15 },
+			{ type = "item", name = "iron-gear-wheel", amount = 20 },
+			{ type = "item", name = "electronic-circuit", amount = 5 },
+			{ type = "item", name = "coconut-sealant", amount = 10 },
+		}
+		data.raw["recipe"]["canex-excavator"].energy_required = 10
+	end
+
+	if data.raw["recipe"]["canex-digable"] then
+		data.raw["recipe"]["canex-digable"].ingredients = {
+			{ type = "item", name = "spoilage", amount = 5 },
+			{ type = "fluid", name = "water", amount = 25 },
+		}
 	end
 end
-
+--cargo-ships
 if mods["cargo-ships"] then
 	if data.raw["recipe"]["floating-electric-pole"] then
 		data.raw["recipe"]["floating-electric-pole"].ingredients = {
@@ -89,6 +85,32 @@ if mods["cargo-ships"] then
 		}
 	end
 end
+--maraxsis
+if mods["maraxsis"] then
+	data:extend({
+		{
+			type = "recipe",
+			category = "calcining",
+			name = "pelagos-maraxsis-super-sealant-substance",
+			icon = "__pelagos__/graphics/sealant-super-sealant.png",
+			enabled = false,
+			allow_productivity = true,
+			energy_required = 5,
+			ingredients = {
+				{ type = "item", name = "coconut-sealant", amount = 2 },
+			},
+			results = {
+				{ type = "item", name = "maraxsis-super-sealant-substance", amount = 1 },
+			},
+			auto_recycle = false,
+		},
+	})
+	local tech = data.raw.technology["maraxsis-project-seadragon"]
+	if tech and tech.effects then
+		table.insert(tech.effects, { type = "unlock-recipe", recipe = "pelagos-maraxsis-super-sealant-substance" })
+	end
+end
+
 -- optional compat with ironclad and it's fork
 if mods["ironclad-gunboat-and-mortar-turret-fork"] then
 	data.raw["recipe"]["ironclad-gunboat"].ingredients = {

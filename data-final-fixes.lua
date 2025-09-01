@@ -11,3 +11,22 @@ end
 
 -- make sure plants can grow on sand-1
 require("prototypes.plants-autoplace-settings")
+
+-- force small electric generator
+if settings.startup["pelagos-force-small-electric-generator"].value then
+	if data.raw["generator"]["or_power_electric"] then
+		local gen = data.raw["generator"]["or_power_electric"]
+
+		-- wymuszamy zawsze tryb "only-when-moduled"
+		gen.max_power_output = "850kW"
+		gen.energy_source.output_flow_limit = "850kW"
+		gen.fluid_box.volume = 500
+	end
+end
+
+-- remove space-connection if corrundum is installed
+if mods["corrundum"] then
+	if data.raw["space-connection"]["gleba-corrundum"] then
+		data.raw["space-connection"]["gleba-corrundum"] = nil
+	end
+end

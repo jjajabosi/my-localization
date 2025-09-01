@@ -182,10 +182,10 @@ data:extend({
 		reset_freshness_on_craft = true,
 		energy_required = 6,
 		ingredients = {
-			{ type = "item",  name = "fermentation-bacteria", amount = 3 },
-			{ type = "item",  name = "nutrients", amount = 20 },
+			{ type = "item", name = "fermentation-bacteria", amount = 3 },
+			{ type = "item", name = "nutrients", amount = 20 },
 			{ type = "fluid", name = "water", amount = 100 },
-            { type = "item",  name = "activated-carbon", amount = 1 }, 
+			{ type = "item", name = "activated-carbon", amount = 1 },
 		},
 		results = {
 			{ type = "fluid", name = "ethanol", amount = 120 },
@@ -323,5 +323,45 @@ data:extend({
 		},
 		energy_required = 10,
 		results = { { type = "item", name = "calciner", amount = 1 } },
+	},
+	{
+		type = "recipe",
+		name = "diesel-mining-drill",
+		energy_required = 2,
+		ingredients = {
+			{ type = "item", name = "electric-mining-drill", amount = 1 },
+			{ type = "item", name = "pipe", amount = 10 },
+			{ type = "item", name = "engine-unit", amount = 1 },
+			{ type = "item", name = "coconut-sealant", amount = 10 },
+		},
+		surface_conditions = {
+			{
+				property = "pressure",
+				min = 1500,
+				max = 1500,
+			},
+		},
+		results = { { type = "item", name = "diesel-mining-drill", amount = 1 } },
+		enabled = false,
+	},
+	{
+
+		type = "recipe",
+		name = "diesel-inserter",
+		enabled = false,
+		ingredients = {
+			{ type = "item", name = "pipe", amount = 5 },
+			{ type = "item", name = "engine-unit", amount = 1 },
+			{ type = "item", name = "coconut-sealant", amount = 6 },
+			{ type = "item", name = "long-handed-inserter", amount = 1 },
+		},
+		surface_conditions = {
+			{
+				property = "pressure",
+				min = 1500,
+				max = 1500,
+			},
+		},
+		results = { { type = "item", name = "diesel-inserter", amount = 1 } },
 	},
 })

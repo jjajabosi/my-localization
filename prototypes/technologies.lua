@@ -6,16 +6,13 @@ fish_breeding.surface_conditions = {
 }
 fish_breeding.enabled = false
 
+-- pre science pack progression
 data:extend({
 	{
 		type = "technology",
 		name = "planet-discovery-pelagos",
-
-		--icon = "__pelagos__/graphics/starmap-planet-pelagos.png",
 		icon_size = 512,
 		icons = PlanetsLib.technology_icon_constant_planet("__pelagos__/graphics/starmap-planet-pelagos.png", 512),
-		--icons = PlanetsLib.technology_icons_moon("__base__/graphics/icons/uranium-ore.png"),
-		--icon_size = 256,
 		essential = true,
 		effects = {
 			{
@@ -64,7 +61,34 @@ data:extend({
 		order = "ea[pelagos]",
 	},
 })
-
+if mods["cargo-ships"] then
+	local t = data.raw["technology"]["automated_water_transport"]
+	t.prerequisites = { "coconut-processing-technology" }
+	t.effects = {
+		{ type = "unlock-recipe", recipe = "boat" },
+		{ type = "unlock-recipe", recipe = "port" },
+		{ type = "unlock-recipe", recipe = "buoy" },
+		{ type = "unlock-recipe", recipe = "chain_buoy" },
+		{ type = "unlock-recipe", recipe = "cargo_ship" },
+	}
+	t.unit = nil
+	t.research_trigger = {
+		type = "craft-item",
+		item = "coconut-sealant",
+	}
+end
+if mods["cargo-ships"] then
+	local t = data.raw["technology"]["deep_sea_oil_extraction"]
+	t.prerequisites = { "automated_water_transport" }
+	t.effects = {
+		{ type = "unlock-recipe", recipe = "oil_rig" },
+	}
+	t.unit = nil
+	t.research_trigger = {
+		type = "build-entity",
+		entity = "cargo_ship",
+	}
+end
 data:extend({
 	{
 		type = "technology",
@@ -84,23 +108,41 @@ data:extend({
 		order = "ea[pelagos]",
 	},
 })
-if mods["cargo-ships"] then
-	local t = data.raw["technology"]["automated_water_transport"]
-	t.prerequisites = { "coconut-processing-technology" }
+
+if mods["canal-excavator"] then
+	local t = data.raw["technology"]["canex-excavator"]
+	t.prerequisites = { "planet-discovery-pelagos" }
 	t.effects = {
-		{ type = "unlock-recipe", recipe = "boat" },
-		{ type = "unlock-recipe", recipe = "port" },
-		{ type = "unlock-recipe", recipe = "buoy" },
-		{ type = "unlock-recipe", recipe = "chain_buoy" },
-		{ type = "unlock-recipe", recipe = "cargo_ship" },
+		{ type = "unlock-recipe", recipe = "canex-excavator" },
+		{ type = "unlock-recipe", recipe = "canex-digable" },
 	}
-	t.unit = nil
+
 	t.research_trigger = {
-		type = "craft-item",
-		item = "coconut-sealant",
+		type = "mine-entity",
+		entity = "pelagos-big-rock",
 	}
+	t.order = "ea[pelagos]"
+	t.unit = nil
 end
 
+data:extend({
+	{
+		type = "technology",
+		name = "diesel-mining-drill",
+		icon = "__pelagos__/graphics/diesel-mining-drill/diesel-mining-drill-technology.png",
+		icon_size = 512,
+		essential = true,
+		effects = {
+			{ type = "unlock-recipe", recipe = "diesel-mining-drill" },
+		},
+		prerequisites = { "coconut-processing-technology", "canex-excavator" },
+		research_trigger = {
+			type = "build-entity",
+			entity = "canex-excavator",
+		},
+		order = "ea[pelagos]",
+	},
+})
 data:extend({
 	{
 		type = "technology",
@@ -118,14 +160,15 @@ data:extend({
 			{ type = "unlock-recipe", recipe = "calciner-advanced-steel-smelting" },
 			{ type = "unlock-recipe", recipe = "activated-carbon" },
 		},
-		prerequisites = { "coconut-processing-technology", "canex-excavator" },
+		prerequisites = { "diesel-mining-drill" },
 		research_trigger = {
 			type = "build-entity",
-			entity = "canex-excavator",
+			entity = "diesel-mining-drill",
 		},
 		order = "ea[pelagos]",
 	},
 })
+--science pack
 data:extend({
 	{
 		type = "technology",
@@ -148,7 +191,7 @@ data:extend({
 		order = "ea[pelagos]",
 	},
 })
-
+--post science pack
 data:extend({
 	{
 		type = "technology",
@@ -166,6 +209,30 @@ data:extend({
 				{ "logistic-science-pack", 1 },
 				{ "chemical-science-pack", 1 },
 				{ "space-science-pack", 1 },
+				{ "pelagos-science-pack", 1 },
+			},
+			time = 60,
+		},
+	},
+})
+data:extend({
+	{
+		type = "technology",
+		name = "diesel-inserter",
+		icon = "__pelagos__/graphics/diesel-long-handed-inserter/diesel-inserter.png",
+		icon_size = 64,
+		effects = {
+			{ type = "unlock-recipe", recipe = "diesel-inserter" },
+		},
+		prerequisites = { "pelagos-science-pack", "production-science-pack" },
+		unit = {
+			count_formula = "1000",
+			ingredients = {
+				{ "automation-science-pack", 1 },
+				{ "logistic-science-pack", 1 },
+				{ "chemical-science-pack", 1 },
+				{ "space-science-pack", 1 },
+				{ "production-science-pack", 1 },
 				{ "pelagos-science-pack", 1 },
 			},
 			time = 60,
@@ -336,7 +403,6 @@ if tech and tech.effects then
 	table.insert(tech.effects, { type = "unlock-recipe", recipe = "pelagos-express-splitter" })
 end
 
--- cargo  ships things
 if mods["cargo-ships"] then
 	local t = data.raw["technology"]["oversea-energy-distribution"]
 	t.prerequisites = { "pelagos-science-pack" }
@@ -370,4 +436,15 @@ if mods["cargo-ships"] then
 		},
 		time = 30,
 	}
+end
+
+-- remove unused researches
+if mods["cargo-ships"] then
+	data.raw["technology"]["cargo_ships"] = nil
+end
+if mods["cargo-ships"] then
+	data.raw["technology"]["water_transport"] = nil
+end
+if mods["cargo-ships"] then
+	data.raw["technology"]["automated_bridges"] = nil
 end

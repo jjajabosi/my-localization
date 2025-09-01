@@ -78,7 +78,7 @@ data:extend({
 			--					starting_frame_deviation = 60,
 			--				},
 			--			},
-			emissions_per_minute = { pollution = 1 },
+			emissions_per_minute = { pollution = 10 }, --12 is burner drill
 		},
 
 		impact_category = "metal",
