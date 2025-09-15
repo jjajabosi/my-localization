@@ -1,0 +1,142 @@
+data:extend({
+	{
+		type = "recipe",
+		name = "pelagos-biochamber",
+		category = "organic-or-assembling",
+		icon = "__pelagos__/graphics/pelagos-biochamber.png",
+		surface_conditions = {
+			{
+				property = "pressure",
+				min = 1500,
+				max = 1500,
+			},
+		},
+		energy_required = 20,
+		ingredients = {
+			{ type = "item", name = "nutrients", amount = 5 },
+			{ type = "item", name = "fermentation-bacteria", amount = 1 },
+			{ type = "item", name = "iron-plate", amount = 20 },
+			{ type = "item", name = "electronic-circuit", amount = 5 },
+			{ type = "item", name = "landfill", amount = 1 },
+		},
+		results = { { type = "item", name = "biochamber", amount = 1 } },
+		auto_recycle = false,
+		enabled = false,
+	},
+	{
+		type = "recipe",
+		name = "pelagos-bioplastic",
+		icon = "__pelagos__/graphics/pelagos-plastic-bar.png",
+		category = "organic",
+		subgroup = "agriculture-products",
+		order = "a[organic-products]-c[pelagos-bioplastic]",
+		auto_recycle = false,
+		enabled = false,
+		allow_productivity = true,
+		energy_required = 2,
+		ingredients = {
+			{ type = "fluid", name = "ethanol", amount = 40 },
+			{ type = "fluid", name = "methane", amount = 60 },
+		},
+		results = {
+			{ type = "item", name = "plastic-bar", amount = 3 },
+		},
+		crafting_machine_tint = {
+			primary = { r = 1.0, g = 1.0, b = 1.0, a = 1.000 },
+			secondary = { r = 0.9, g = 1.0, b = 0.7, a = 1.000 },
+		},
+	},
+	{
+		type = "recipe",
+		name = "pelagos-biolubricant",
+		icon = "__pelagos__/graphics/pelagos-lubricant.png",
+		category = "organic",
+		subgroup = "agriculture-products",
+		order = "a[organic-products]-c[pelagos-biolubricant]",
+		auto_recycle = false,
+		enabled = false,
+		allow_productivity = true,
+		ingredients = {
+			{ type = "fluid", name = "coconut-oil", amount = 10 },
+			{ type = "item", name = "fermentation-bacteria", amount = 1 },
+		},
+		results = {
+			{ type = "fluid", name = "lubricant", amount = 10 },
+			{ type = "item", name = "spoilage", amount = 1 },
+		},
+		main_product = "lubricant",
+		crafting_machine_tint = {
+			primary = { r = 0.2, g = 0.6, b = 0.2, a = 1.000 },
+			secondary = { r = 0.4, g = 0.8, b = 0.3, a = 1.000 },
+		},
+	},
+	{
+		type = "recipe",
+		name = "pelagos-processing-unit",
+		icon = "__pelagos__/graphics/pelagos-processing-unit.png",
+		category = "electronics-with-fluid",
+		enabled = false,
+		energy_required = 10,
+		ingredients = {
+			{ type = "item", name = "electronic-circuit", amount = 20 },
+			{ type = "item", name = "advanced-circuit", amount = 2 },
+			{ type = "fluid", name = "ethanol", amount = 5 },
+		},
+		results = { { type = "item", name = "processing-unit", amount = 1 } },
+		allow_productivity = true,
+	},
+	{
+		type = "recipe",
+		name = "pelagos-battery",
+		icon = "__pelagos__/graphics/pelagos-battery.png",
+		category = "chemistry",
+		energy_required = 4,
+		enabled = false,
+		ingredients = {
+			{ type = "fluid", name = "ethanol", amount = 20 },
+			{ type = "item", name = "iron-plate", amount = 1 },
+			{ type = "item", name = "activated-carbon", amount = 1 },
+		},
+		results = { { type = "item", name = "battery", amount = 2 } },
+		crafting_machine_tint = {
+			primary = { r = 0.965, g = 0.482, b = 0.338, a = 1.000 }, -- #f67a56ff
+			secondary = { r = 0.831, g = 0.560, b = 0.222, a = 1.000 }, -- #d38e38ff
+			tertiary = { r = 0.728, g = 0.818, b = 0.443, a = 1.000 }, -- #b9d070ff
+			quaternary = { r = 0.939, g = 0.763, b = 0.191, a = 1.000 }, -- #efc230ff
+		},
+		allow_productivity = true,
+	},
+	{
+		type = "recipe",
+		name = "improvised-landfill",
+		icon = "__pelagos__/graphics/improvised-landfill.png",
+		energy_required = 0.5,
+		enabled = false,
+		auto_recycle = false,
+		category = "organic",
+		order = "a[organic-products]-c[improvised-landfill]",
+		ingredients = {
+			{ type = "item", name = "stone", amount = 20 },
+			{ type = "item", name = "spoilage", amount = 80 },
+		},
+		results = { { type = "item", name = "landfill", amount = 1 } },
+		crafting_machine_tint = {
+			primary = { r = 0.35, g = 0.25, b = 0.1, a = 1.000 },
+			secondary = { r = 0.1, g = 0.3, b = 0.1, a = 1.000 },
+		},
+	},
+	{
+		type = "recipe",
+		name = "calcite-concrete",
+		icon = "__pelagos__/graphics/calcite-concrete.png",
+		energy_required = 10,
+		enabled = false,
+		category = "crafting-with-fluid",
+		ingredients = {
+			{ type = "item", name = "calcite", amount = 10 },
+			{ type = "item", name = "iron-ore", amount = 2 },
+			{ type = "fluid", name = "water", amount = 100 },
+		},
+		results = { { type = "item", name = "concrete", amount = 10 } },
+	},
+})
