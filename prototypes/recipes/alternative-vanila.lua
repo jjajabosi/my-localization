@@ -15,8 +15,7 @@ data:extend({
 		ingredients = {
 			{ type = "item", name = "nutrients", amount = 5 },
 			{ type = "item", name = "fermentation-bacteria", amount = 1 },
-			{ type = "item", name = "iron-plate", amount = 20 },
-			{ type = "item", name = "electronic-circuit", amount = 5 },
+			{ type = "item", name = "iron-plate", amount = 30 },
 			{ type = "item", name = "landfill", amount = 1 },
 		},
 		results = { { type = "item", name = "biochamber", amount = 1 } },
@@ -138,5 +137,19 @@ data:extend({
 			{ type = "fluid", name = "water", amount = 100 },
 		},
 		results = { { type = "item", name = "concrete", amount = 10 } },
+	},
+	{
+		type = "recipe",
+		name = "pelagos-explosives",
+		category = "organic-or-assembling",
+		icon = "__pelagos__/graphics/methane-explosives.png",
+		ingredients = {
+			{ type = "item", name = "coal", amount = 1 },
+			{ type = "fluid", name = "methane", amount = 50 },
+			{ type = "fluid", name = "water", amount = 10 },
+		},
+		results = { { type = "item", name = "explosives", amount = 2 } },
+		auto_recycle = false,
+		enabled = false,
 	},
 })

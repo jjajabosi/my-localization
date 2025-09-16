@@ -15,6 +15,8 @@ require("prototypes.liquid-fuel.diesel-drill")
 require("prototypes.liquid-fuel.diesel-inserter")
 require("prototypes.liquid-fuel.diesel-pump")
 require("prototypes.liquid-fuel.diesel-assembling-machine")
+--require("prototypes.liquid-fuel.diesel-thruster")
+--require("prototypes.liquid-fuel.diesel-asteroid-collector")
 require("prototypes.liquid-fuel.barreling-machine")
 require("prototypes.rockets")
 require("prototypes.canal-excavator")
@@ -22,13 +24,13 @@ require("prototypes.cargo-ships")
 require("prototypes.tips-and-tricks")
 require("data-fixes")
 
---if mods["any-planet-start"] then
---	APS.add_planet({
---		name = "pelagos",
---		filename = "__pelagos__/aps.lua",
---		technology = "planet-discovery-pelagos",
---	})
---end
+if mods["any-planet-start"] then
+	APS.add_planet({
+		name = "pelagos",
+		filename = "__pelagos__/aps.lua",
+		technology = "planet-discovery-pelagos",
+	})
+end
 -- dummy prototype
 if data.raw["rocket-silo"]["rocket-silo"] then
 	local pelagos_silo = table.deepcopy(data.raw["rocket-silo"]["rocket-silo"])

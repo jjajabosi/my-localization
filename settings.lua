@@ -42,6 +42,6 @@ data:extend({
 	},
 })
 
---if mods["any-planet-start"] then
---	APS.add_choice("pelagos")
---end
+if mods["any-planet-start"] then
+	APS.add_choice("pelagos")
+end

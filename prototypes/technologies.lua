@@ -204,6 +204,7 @@ data:extend({
 			{ type = "unlock-recipe", recipe = "pelagos-biolubricant" },
 			{ type = "unlock-recipe", recipe = "pelagos-processing-unit" },
 			{ type = "unlock-recipe", recipe = "pelagos-battery" },
+			{ type = "unlock-recipe", recipe = "pelagos-explosives" },
 			{ type = "unlock-recipe", recipe = "titanium-dust" },
 			{ type = "unlock-recipe", recipe = "titanium-plate" },
 		},
@@ -491,7 +492,7 @@ if mods["Long_Range_Delivery_Drones"] then
 end
 if mods["cargo-ships"] then
 	local t = data.raw["technology"]["oversea-energy-distribution"]
-	t.prerequisites = { "pelagos-science-pack" }
+	t.prerequisites = { "pelagos-science-pack", "space-science-pack" }
 	t.effects = {
 		{ type = "unlock-recipe", recipe = "floating-electric-pole" },
 	}
