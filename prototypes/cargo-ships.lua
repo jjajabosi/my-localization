@@ -29,6 +29,10 @@ if data.raw["storage-tank"]["or_tank"] then
 	data.raw["storage-tank"]["or_tank"].fluid_box.volume = 150000 --overrides default settings
 end
 
+if data.raw["mining-drill"]["oil_rig"] then
+	data.raw["mining-drill"]["oil_rig"].energy_usage = "220kW" -- was 750
+end
+
 -- hide bridge and all related things
 
 -- items

@@ -16,9 +16,10 @@ require("prototypes.plants-autoplace-settings")
 if settings.startup["pelagos-force-small-electric-generator"].value then
 	if data.raw["generator"]["or_power_electric"] then
 		local gen = data.raw["generator"]["or_power_electric"]
-		gen.max_power_output = "850kW"
-		gen.energy_source.output_flow_limit = "850kW"
+		gen.max_power_output = "350kW" --was 850
+		gen.energy_source.output_flow_limit = "350kW" --was 850
 		gen.fluid_box.volume = 500
+		gen.effectivity = 5000
 	end
 end
 
@@ -26,6 +27,7 @@ require("prototypes.liquid-fuel.fuel-value")
 require("prototypes.liquid-fuel.barrel-fuel")
 require("prototypes.pirate-ship")
 require("prototypes.liquid-fuel.rocket-silo")
+require("prototypes.planet.electromagnetic-waves-pollution-emision")
 
 -- allow foundation on pelagos-deepsea
 local landfill = data.raw.item["foundation"]

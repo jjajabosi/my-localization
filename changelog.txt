@@ -5,6 +5,9 @@ Date: 2025-09-16
     - added Any planet start mod support
     - added methane explosives recipe
     - pelagos biochamber recipe now don't require electronic circuits but 10 extra iron plates instead
+    - adjusted titanium sludge and methane patches so they won't overlap in generation
+    - introduced copper spitter into pelagos terrain generation
+    - introduced electromagnetic waves - pelagos pollution type created by electrical devices
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.2
 Date: 2025-09-15

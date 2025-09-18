@@ -23,7 +23,7 @@ local overrides = {
 	["ethanol"] = "2MJ",
 	["methane"] = "0.6MJ",
 	["crude-oil"] = "0.3MJ",
-	["titanium-sludge"] = "0.125MJ",
+	["titanium-sludge"] = "0.15MJ",
 	--bumpuff agriculture
 	["puff-gas"] = "0.6MJ",
 	--maraxis

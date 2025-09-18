@@ -473,6 +473,7 @@ local function MapGen_Pelagos()
 					--["dead-tree-desert"] = {},
 					["methane"] = {},
 					["titanium-sludge"] = {},
+					["copper-spitter-spawner"] = {},
 				},
 			},
 		},
@@ -502,7 +503,8 @@ PlanetsLib:extend({
 		draw_orbit = true,
 		magnitude = 1.1,
 		gravity_pull = 10,
-		pollutant_type = nil,
+		pollutant_type = "electromagnetic_waves",
+		--pollutant_type = nil
 		order = "a[pelagos]",
 		surface_properties = {
 			-- There is no stat for robot energy usage, it's (gravity/pressure) * 100x

@@ -10,6 +10,7 @@ local pelagos_elevation_persistence = 0.8
 -- -- tweak this later
 -- -----------------------
 local pelagos_elevation_bias = -15
+--local pelagos_elevation_bias = 15
 -- amplitude (higher = deeper oceans / higher lands)
 local pelagos_elevation_amplitude = 7.0 --
 -- -----------------------

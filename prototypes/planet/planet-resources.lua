@@ -42,12 +42,13 @@ data:extend({
 				{
 					type = "fluid",
 					name = "titanium-sludge",
-					amount_min = 2, --base is 10
-					amount_max = 2, --base is 10
+					amount_min = 4, --base is 10
+					amount_max = 4, --base is 10
 					probability = 1,
 				},
 			},
 		},
+		map_generator_bounding_box = { { -3.5, -3.5 }, { 3.5, 3.5 } },
 		selection_box = { { -1.5, -1.5 }, { 1.5, 1.5 } },
 		autoplace = resource_autoplace.resource_autoplace_settings({
 			name = "titanium-sludge",
@@ -126,12 +127,13 @@ data:extend({
 				{
 					type = "fluid",
 					name = "methane",
-					amount_min = 2, --base is 10
-					amount_max = 2, --base is 10
+					amount_min = 4, --base is 10
+					amount_max = 4, --base is 10
 					probability = 1,
 				},
 			},
 		},
+		map_generator_bounding_box = { { -3.5, -3.5 }, { 3.5, 3.5 } },
 		selection_box = { { -1.5, -1.5 }, { 1.5, 1.5 } },
 		autoplace = resource_autoplace.resource_autoplace_settings({
 			name = "methane",
