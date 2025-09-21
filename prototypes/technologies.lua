@@ -24,7 +24,7 @@ data:extend({
 			{ type = "unlock-recipe", recipe = "pelagos-rocket-part" },
 			{ type = "unlock-recipe", recipe = "pirateship" },
 		},
-		prerequisites = { "agricultural-science-pack", "fish-breeding" },
+		prerequisites = { "agricultural-science-pack", "fish-breeding", "captivity" },
 		unit = {
 			count = 1000,
 			ingredients = {
@@ -108,6 +108,9 @@ data:extend({
 		effects = {
 			{ type = "unlock-recipe", recipe = "fermentation-bacteria" },
 			{ type = "unlock-recipe", recipe = "fermentation-bacteria-cultivation" },
+			{ type = "unlock-recipe", recipe = "fermented-fish" },
+			{ type = "unlock-recipe", recipe = "pelagos-capture-robot-rocket" },
+			{ type = "unlock-recipe", recipe = "copper-biter-egg" },
 		},
 		prerequisites = { "deep_sea_oil_extraction" },
 		research_trigger = {
@@ -115,6 +118,23 @@ data:extend({
 			entity = "oil_rig",
 		},
 		order = "ea[pelagos]",
+	},
+})
+
+data:extend({
+	{
+		type = "technology",
+		name = "copper-biter-captivity",
+		icon = "__space-age__/graphics/technology/captivity.png",
+		icon_size = 256,
+		effects = {
+			{ type = "unlock-recipe", recipe = "copper-plate-from-spitter-egg" },
+		},
+		prerequisites = { "fermentation-bacteria-cultivation-technology", "rocketry" },
+		research_trigger = {
+			type = "craft-item",
+			item = "copper-biter-egg",
+		},
 	},
 })
 
@@ -336,6 +356,59 @@ data:extend({
 				{ "chemical-science-pack", 1 },
 				{ "production-science-pack", 1 },
 				{ "pelagos-science-pack", 1 },
+			},
+			time = 60,
+		},
+		max_level = "infinite",
+		upgrade = true,
+	},
+})
+local cultivation_productivity_effects = {
+	{
+		type = "change-recipe-productivity",
+		recipe = "fermentation-bacteria-cultivation",
+		change = 0.1,
+	},
+	{
+		type = "change-recipe-productivity",
+		recipe = "iron-bacteria-cultivation",
+		change = 0.1,
+	},
+	{
+		type = "change-recipe-productivity",
+		recipe = "copper-bacteria-cultivation",
+		change = 0.1,
+	},
+	{
+		type = "change-recipe-productivity",
+		recipe = "fish-breeding",
+		change = 0.1,
+	},
+	{
+		type = "change-recipe-productivity",
+		recipe = "pentapod-egg",
+		change = 0.1,
+	},
+}
+
+data:extend({
+	{
+		type = "technology",
+		name = "cultivation-productivity",
+		icons = util.technology_icon_constant_recipe_productivity("__pelagos__/graphics/cultivation-productivity.png"),
+		icon_size = 256,
+		effects = cultivation_productivity_effects,
+
+		prerequisites = { "pelagos-science-pack", "copper-biter-captivity", "agricultural-science-pack" },
+		unit = {
+			count_formula = "1.5^L*1000",
+			ingredients = {
+				{ "automation-science-pack", 1 },
+				{ "logistic-science-pack", 1 },
+				{ "chemical-science-pack", 1 },
+				{ "production-science-pack", 1 },
+				{ "pelagos-science-pack", 1 },
+				{ "agricultural-science-pack", 1 },
 			},
 			time = 60,
 		},

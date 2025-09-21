@@ -492,3 +492,57 @@ data:extend({
 		allow_productivity = true,
 	},
 })
+
+data:extend({
+	{
+		type = "recipe",
+		name = "copper-biter-egg",
+		category = "captive-spawner-process",
+		order = "c[eggs]-a[copper-biter-egg]",
+		hide_from_player_crafting = true,
+		auto_recycle = false,
+		preserve_products_in_machine_output = true,
+		energy_required = 10,
+		ingredients = {},
+		results = {
+			{ type = "item", name = "copper-biter-egg", amount = 5 },
+		},
+		enabled = false,
+	},
+	{
+		type = "recipe",
+		icon = "__pelagos__/graphics/copper-plate.png",
+		name = "copper-plate-from-spitter-egg",
+		category = "smelting",
+		auto_recycle = false,
+		energy_required = 3.2,
+		ingredients = { { type = "item", name = "copper-biter-egg", amount = 1 } },
+		results = { { type = "item", name = "copper-plate", amount = 1 } },
+		allow_productivity = true,
+	},
+})
+data:extend({
+	{
+		type = "recipe",
+		name = "fermented-fish",
+		category = "organic",
+		subgroup = "agriculture-products",
+		order = "a[seeds]-c[wood-spoiling]",
+		auto_recycle = false,
+		enabled = false,
+		allow_productivity = true,
+		energy_required = 10,
+		ingredients = {
+			{ type = "item", name = "coconut-meat", amount = 5 },
+			{ type = "item", name = "raw-fish", amount = 15 },
+			{ type = "item", name = "fermentation-bacteria", amount = 5 },
+		},
+		results = {
+			{ type = "item", name = "fermented-fish", amount = 5 },
+		},
+		crafting_machine_tint = {
+			primary = { r = 0.2, g = 0.6, b = 0.2, a = 1.000 },
+			secondary = { r = 0.4, g = 0.8, b = 0.3, a = 1.000 },
+		},
+	},
+})

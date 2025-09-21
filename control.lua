@@ -51,6 +51,9 @@ local function build_allowed_entities()
 	end
 
 	-- additional stuff
+	allowed["gun-turret"] = true
+	allowed["flamethrower-turret"] = true
+	allowed["rocket-turret"] = true
 	allowed["pipe"] = true
 	allowed["steel-chest"] = true
 	allowed["barreling-machine"] = true

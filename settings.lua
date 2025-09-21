@@ -40,6 +40,13 @@ data:extend({
 		maximum_value = 250000,
 		order = "pelagos-d",
 	},
+	{
+		type = "bool-setting",
+		name = "pelagos-fluid-value-based-flamethrower",
+		setting_type = "startup",
+		default_value = true,
+		order = "pelagos-e",
+	},
 })
 
 if mods["any-planet-start"] then

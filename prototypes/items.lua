@@ -269,3 +269,80 @@ data:extend({
 		random_tint_color = item_tints.iron_rust,
 	},
 })
+
+data:extend({
+	{
+		type = "item",
+		name = "copper-biter-egg",
+		icon = "__pelagos__/graphics/copper-biter-egg.png",
+		fuel_category = "chemical",
+		fuel_value = "6MJ",
+		subgroup = "agriculture-products",
+		order = "c[eggs]-a[copper-biter-egg]",
+		default_import_location = "pelagos",
+		inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
+		pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
+		drop_sound = space_age_item_sounds.agriculture_inventory_move,
+		stack_size = 100,
+		weight = 2 * kg,
+		spoil_ticks = 0.5 * hour,
+		spoil_to_trigger_result = {
+			items_per_trigger = 25,
+			trigger = {
+				type = "direct",
+				action_delivery = {
+					type = "instant",
+					source_effects = {
+						{
+							type = "create-entity",
+							entity_name = "big-copper-biter",
+							affects_target = true,
+							show_in_tooltip = true,
+							as_enemy = true,
+							find_non_colliding_position = true,
+							abort_if_over_space = true,
+							offset_deviation = { { -1, -1 }, { 1, 1 } },
+							non_colliding_fail_result = {
+								type = "direct",
+								action_delivery = {
+									type = "instant",
+									source_effects = {
+										{
+											type = "create-entity",
+											entity_name = "big-copper-biter",
+											affects_target = true,
+											show_in_tooltip = false,
+											as_enemy = true,
+											offset_deviation = { { -1, -1 }, { 1, 1 } },
+										},
+									},
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+	},
+})
+
+data:extend({
+	{
+		type = "item",
+		name = "fermented-fish",
+		icon = "__pelagos__/graphics/fermented-fish.png",
+		subgroup = "agriculture-products",
+		order = "a[organic-processing]-b[bioflux]",
+		inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
+		pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
+		drop_sound = space_age_item_sounds.agriculture_inventory_move,
+		fuel_category = "food",
+		fuel_value = "2MJ",
+		stack_size = 20,
+		default_import_location = "pelagos",
+		spoil_ticks = 1 * hour,
+		spoil_result = "spoilage",
+		weight = 5 * kg,
+		--capsule_action = item_effects.bioflux_speed_and_regen,
+	},
+})

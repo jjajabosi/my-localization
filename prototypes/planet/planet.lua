@@ -6,6 +6,7 @@ local decorative_trigger_effects = require("__base__/prototypes/decorative/decor
 local base_decorative_sprite_priority = "extra-high"
 local hit_effects = require("__base__/prototypes/entity/hit-effects")
 local sounds = require("__base__/prototypes/entity/sounds")
+local base_sounds = require("__base__/prototypes/entity/sounds")
 --
 
 data:extend({
@@ -40,7 +41,7 @@ data:extend({
 		minable = {
 			mining_time = 2,
 			results = {
-				{ type = "item", name = "stone", amount = 30 },
+				{ type = "item", name = "stone", amount = 20 },
 				{ type = "item", name = "fermentation-bacteria", amount = 5 },
 			},
 		},
@@ -409,6 +410,284 @@ data:extend({
 		},
 	},
 })
+
+data:extend({
+	{
+		name = "pelagos-copper-stromatolite",
+		type = "simple-entity",
+		flags = { "placeable-neutral", "placeable-off-grid" },
+		icon = "__space-age__/graphics/icons/copper-stromatolite.png",
+		subgroup = "grass",
+		order = "b[decorative]-l[rock]-c[gleba]-a[copper-stromatolite]",
+		collision_box = { { -0.5, -0.5 }, { 0.5, 0.5 } },
+		selection_box = { { -0.7, -0.7 }, { 0.7, 0.7 } },
+		collision_mask = {
+			layers = { player = true, train = true, is_object = true, is_lower_object = true },
+		},
+		damaged_trigger_effect = hit_effects.rock(),
+		render_layer = "object",
+		max_health = 500,
+		surface_conditions = {
+			{
+				property = "pressure",
+				min = 1500,
+				max = 1500,
+			},
+		},
+		autoplace = {
+			probability_expression = "0.005 * noise_layer_noise('pelagos-copper-stromatolite')",
+		},
+		dying_trigger_effect = decorative_trigger_effects.big_rock(),
+		minable = {
+			mining_particle = "copper-ore-particle",
+			mining_time = 0.4,
+			results = {
+				{ type = "item", name = "stone", amount_min = 3, amount_max = 7 },
+				{ type = "item", name = "copper-ore", amount_min = 13, amount_max = 17 },
+			},
+		},
+		resistances = {
+			{
+				type = "fire",
+				percent = 100,
+			},
+		},
+		map_color = { 129, 105, 78 },
+		count_as_rock_for_filtered_deconstruction = true,
+		mined_sound = base_sounds.deconstruct_bricks(1.0),
+		impact_category = "stone",
+		pictures = {
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-01.png",
+				width = 209,
+				height = 138,
+				shift = { 0.304688, -0.4 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-02.png",
+				width = 165,
+				height = 129,
+				shift = { 0.0, 0.0390625 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-03.png",
+				width = 151,
+				height = 139,
+				shift = { 0.151562, 0.0 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-04.png",
+				width = 216,
+				height = 110,
+				shift = { 0.390625, 0.0 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-05.png",
+				width = 154,
+				height = 147,
+				shift = { 0.328125, 0.0703125 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-06.png",
+				width = 154,
+				height = 132,
+				shift = { 0.16875, -0.1 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-07.png",
+				width = 193,
+				height = 130,
+				shift = { 0.3, -0.2 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-08.png",
+				width = 136,
+				height = 117,
+				shift = { 0.0, 0.0 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-09.png",
+				width = 157,
+				height = 115,
+				shift = { 0.1, 0.0 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-10.png",
+				width = 198,
+				height = 153,
+				shift = { 0.325, -0.1 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-11.png",
+				width = 190,
+				height = 115,
+				shift = { 0.453125, 0.0 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-12.png",
+				width = 229,
+				height = 126,
+				shift = { 0.539062, -0.015625 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-13.png",
+				width = 151,
+				height = 125,
+				shift = { 0.0703125, 0.179688 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-14.png",
+				width = 137,
+				height = 117,
+				shift = { 0.160938, 0.0 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-15.png",
+				width = 201,
+				height = 141,
+				shift = { 0.242188, -0.195312 },
+				scale = 0.4,
+			},
+			{
+				filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-16.png",
+				width = 209,
+				height = 154,
+				shift = { 0.351562, -0.1 },
+				scale = 0.4,
+			},
+		},
+		water_reflection = {
+			pictures = {
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-01-effect-map.png",
+					width = 96,
+					height = 92,
+					shift = { 0.304688, -0.3 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-02-effect-map.png",
+					width = 78,
+					height = 92,
+					shift = { 0.0, 0.3 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-03-effect-map.png",
+					width = 70,
+					height = 91,
+					shift = { 0.151562, 0.1 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-04-effect-map.png",
+					width = 88,
+					height = 94,
+					shift = { 0.30625, 0.3 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-05-effect-map.png",
+					width = 77,
+					height = 92,
+					shift = { 0.328125, 0.0703125 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-06-effect-map.png",
+					width = 77,
+					height = 92,
+					shift = { 0.16875, 0.1 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-07-effect-map.png",
+					width = 94,
+					height = 93,
+					shift = { 0.3, 0.0 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-08-effect-map.png",
+					width = 63,
+					height = 93,
+					shift = { 0.0, 0.2 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-09-effect-map.png",
+					width = 79,
+					height = 93,
+					shift = { 0.1, 0.2 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-10-effect-map.png",
+					width = 93,
+					height = 93,
+					shift = { 0.325, -0.1 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-11-effect-map.png",
+					width = 95,
+					height = 93,
+					shift = { 0.453125, 0.2 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-12-effect-map.png",
+					width = 92,
+					height = 92,
+					shift = { 0.3, 0.1 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-13-effect-map.png",
+					width = 76,
+					height = 93,
+					shift = { 0.0703125, 0.3 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-14-effect-map.png",
+					width = 63,
+					height = 93,
+					shift = { 0.160938, 0.2 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-15-effect-map.png",
+					width = 101,
+					height = 92,
+					shift = { 0.242188, -0.1 },
+					scale = 0.8,
+				},
+				{
+					filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-16-effect-map.png",
+					width = 88,
+					height = 92,
+					shift = { 0.1, -0.1 },
+					scale = 0.8,
+				},
+			},
+		},
+	},
+})
 -- deepwater initialization (finished in data-final-fix)
 local deepwater = table.deepcopy(data.raw.tile["deepwater"])
 deepwater.name = "pelagos-deepsea"
@@ -430,12 +709,12 @@ local function MapGen_Pelagos()
 		cliff_settings = nil,
 		default_enable_all_autoplace_controls = false,
 		autoplace_controls = {
-			["copper-ore"] = {
-				frequency = 3,
-				size = 1,
-				richness = 2,
-				starting_area = false,
-			},
+			--	["copper-ore"] = {
+			--		frequency = 3,
+			--		size = 1,
+			--		richness = 2,
+			--		starting_area = false,
+			--	},
 			["iron-ore"] = {
 				frequency = 4,
 				size = 1,
@@ -468,12 +747,13 @@ local function MapGen_Pelagos()
 					["fish"] = {},
 					["coconut-palm"] = {},
 					["iron-ore"] = {},
-					["copper-ore"] = {},
+					--["copper-ore"] = {},
 					["pelagos-big-rock"] = {},
+					["pelagos-copper-stromatolite"] = {},
 					--["dead-tree-desert"] = {},
 					["methane"] = {},
 					["titanium-sludge"] = {},
-					["copper-spitter-spawner"] = {},
+					["copper-biter-spawner"] = {},
 				},
 			},
 		},

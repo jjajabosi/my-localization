@@ -152,4 +152,17 @@ data:extend({
 		auto_recycle = false,
 		enabled = false,
 	},
+	{
+		type = "recipe",
+		name = "pelagos-capture-robot-rocket",
+		energy_required = 10,
+		ingredients = {
+			{ type = "item", name = "flying-robot-frame", amount = 1 },
+			{ type = "item", name = "steel-plate", amount = 2 },
+			{ type = "item", name = "fermented-fish", amount = 20 },
+			{ type = "item", name = "processing-unit", amount = 2 },
+		},
+		results = { { type = "item", name = "capture-robot-rocket", amount = 1 } },
+		enabled = false,
+	},
 })

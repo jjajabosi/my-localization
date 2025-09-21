@@ -19,8 +19,8 @@ local copper_tints = {
 data:extend({
 	{
 		type = "unit",
-		name = "small-copper-spitter",
-		icon = "__base__/graphics/icons/small-spitter.png", -- możesz podmienić na własną ikonę
+		name = "small-copper-biter",
+		icon = "__base__/graphics/icons/small-spitter.png",
 		flags = { "placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable" },
 		max_health = 60,
 		order = "b-b-z",
@@ -37,14 +37,14 @@ data:extend({
 		resistances = {
 			--{ type = "physical", decrease = 2, percent = 15 },
 			--{ type = "explosion", decrease = 5 },
-			--{ type = "fire", decrease = 3, percent = 60 },
+			{ type = "fire", decrease = 0, percent = 10 },
 			{ type = "laser", decrease = 10, percent = 99 },
 			{ type = "electric", decrease = 10, percent = 99 },
 		},
 		collision_mask = { layers = { ["object"] = true } },
 		alternative_attacking_frame_sequence = spitter_alternative_attacking_animation_sequence,
 		attack_parameters = spitter_attack_parameters({
-			acid_stream_name = "acid-stream-spitter-small", -- możesz zmienić na small/medium/big
+			acid_stream_name = "acid-stream-spitter-small",
 			range = 15,
 			min_attack_distance = 6,
 			cooldown = 90,
@@ -62,7 +62,7 @@ data:extend({
 		distance_per_frame = 0.05,
 		absorptions_to_join_attack = { electromagnetic_waves = 1 },
 
-		--corpse = "copper-spitter-corpse",
+		--corpse = "copper-biter-corpse",
 		dying_explosion = "small-spitter-die",
 		working_sound = sounds.spitter_calls_med(0.2, 0.53, copper_tints.small, copper_tints.small),
 		dying_sound = sounds.spitter_dying_mid(0.65, copper_tints.small, copper_tints.small),
@@ -78,7 +78,7 @@ data:extend({
 data:extend({
 	{
 		type = "unit",
-		name = "medium-copper-spitter",
+		name = "medium-copper-biter",
 		icon = "__base__/graphics/icons/medium-spitter.png",
 		flags = { "placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable" },
 		max_health = 200,
@@ -94,6 +94,7 @@ data:extend({
 		min_pursue_time = 10 * 60,
 		max_pursue_distance = 50,
 		resistances = {
+			{ type = "fire", decrease = 2, percent = 30 },
 			{ type = "laser", decrease = 10, percent = 95 },
 			{ type = "electric", decrease = 10, percent = 95 },
 		},
@@ -114,7 +115,7 @@ data:extend({
 		vision_distance = 30,
 		movement_speed = 0.16,
 		distance_per_frame = 0.05,
-		absorptions_to_join_attack = { electromagnetic_waves = 2 },
+		absorptions_to_join_attack = { electromagnetic_waves = 6 },
 		dying_explosion = "medium-spitter-die",
 		working_sound = sounds.spitter_calls_med(0.3, 0.53, copper_tints.medium, copper_tints.medium),
 		dying_sound = sounds.spitter_dying_mid(0.65, copper_tints.medium, copper_tints.medium),
@@ -130,7 +131,7 @@ data:extend({
 data:extend({
 	{
 		type = "unit",
-		name = "big-copper-spitter",
+		name = "big-copper-biter",
 		icon = "__base__/graphics/icons/big-spitter.png",
 		flags = { "placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable" },
 		max_health = 400,
@@ -146,6 +147,7 @@ data:extend({
 		min_pursue_time = 10 * 60,
 		max_pursue_distance = 50,
 		resistances = {
+			{ type = "fire", decrease = 3, percent = 50 },
 			{ type = "laser", decrease = 12, percent = 97 },
 			{ type = "electric", decrease = 12, percent = 97 },
 		},
@@ -166,7 +168,7 @@ data:extend({
 		vision_distance = 30,
 		movement_speed = 0.15,
 		distance_per_frame = 0.05,
-		absorptions_to_join_attack = { electromagnetic_waves = 3 },
+		absorptions_to_join_attack = { electromagnetic_waves = 15 },
 		dying_explosion = "big-spitter-die",
 		working_sound = sounds.spitter_calls_med(0.35, 0.53, copper_tints.big, copper_tints.big),
 		dying_sound = sounds.spitter_dying_big(0.65, copper_tints.big, copper_tints.big),
@@ -182,7 +184,7 @@ data:extend({
 data:extend({
 	{
 		type = "unit",
-		name = "behemoth-copper-spitter",
+		name = "behemoth-copper-biter",
 		icon = "__base__/graphics/icons/behemoth-spitter.png",
 		flags = { "placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable" },
 		max_health = 2000,
@@ -198,6 +200,7 @@ data:extend({
 		min_pursue_time = 10 * 60,
 		max_pursue_distance = 50,
 		resistances = {
+			{ type = "fire", decrease = 3, percent = 70 },
 			{ type = "laser", decrease = 15, percent = 99 },
 			{ type = "electric", decrease = 15, percent = 99 },
 		},
@@ -218,7 +221,7 @@ data:extend({
 		vision_distance = 30,
 		movement_speed = 0.14,
 		distance_per_frame = 0.05,
-		absorptions_to_join_attack = { electromagnetic_waves = 4 },
+		absorptions_to_join_attack = { electromagnetic_waves = 50 },
 		dying_explosion = "behemoth-spitter-die",
 		working_sound = sounds.spitter_calls_med(0.4, 0.53, copper_tints.behemoth, copper_tints.behemoth),
 		dying_sound = sounds.spitter_dying_big(0.65, copper_tints.behemoth, copper_tints.behemoth),
@@ -234,7 +237,7 @@ data:extend({
 data:extend({
 	{
 		type = "unit",
-		name = "leviathan-copper-spitter",
+		name = "leviathan-copper-biter",
 		icon = "__base__/graphics/icons/behemoth-spitter.png", -- możesz zrobić własną ikonkę
 		flags = { "placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable" },
 		max_health = 5000,
@@ -250,14 +253,15 @@ data:extend({
 		min_pursue_time = 10 * 60,
 		max_pursue_distance = 60,
 		resistances = {
+			{ type = "explosion", decrease = 10, percent = 80 },
+			{ type = "fire", decrease = 3, percent = 90 },
 			{ type = "laser", decrease = 20, percent = 99 },
 			{ type = "electric", decrease = 20, percent = 99 },
-			{ type = "explosion", decrease = 10, percent = 80 },
 		},
 		collision_mask = { layers = { ["object"] = true } },
 		alternative_attacking_frame_sequence = spitter_alternative_attacking_animation_sequence,
 		attack_parameters = spitter_attack_parameters({
-			acid_stream_name = "acid-stream-spitter-behemoth", -- można zrobić własny stream np. copper-acid-stream
+			acid_stream_name = "acid-stream-spitter-behemoth",
 			range = 24,
 			min_attack_distance = 6,
 			cooldown = 60,
@@ -271,7 +275,7 @@ data:extend({
 		vision_distance = 40,
 		movement_speed = 0.10,
 		distance_per_frame = 0.05,
-		absorptions_to_join_attack = { electromagnetic_waves = 5 },
+		absorptions_to_join_attack = { electromagnetic_waves = 100 },
 		dying_explosion = "behemoth-spitter-die",
 		working_sound = sounds.spitter_calls_med(0.5, 0.53, copper_tints.leviathan, copper_tints.leviathan),
 		dying_sound = sounds.spitter_dying_big(0.65, copper_tints.leviathan, copper_tints.leviathan),
@@ -286,7 +290,7 @@ data:extend({
 
 --add_spitter_die_animation(0.7, { r = 1, g = 1, b = 1 }, { r = 1, g = 1, b = 1 }, {
 --	type = "corpse",
---	name = "copper-spitter-corpse",
+--	name = "copper-biter-corpse",
 --	icon = "__base__/graphics/icons/medium-spitter-corpse.png",
 --	selectable_in_game = false,
 --	selection_box = { { -1, -1 }, { 1, 1 } },
@@ -303,8 +307,8 @@ data:extend({
 data:extend({
 	{
 		type = "unit-spawner",
-		name = "copper-spitter-spawner",
-		icon = "__base__/graphics/icons/spitter-spawner.png", -- możesz podmienić
+		name = "copper-biter-spawner",
+		icon = "__base__/graphics/icons/spitter-spawner.png",
 		flags = { "placeable-player", "placeable-enemy", "not-repairable" },
 		max_health = 400,
 		order = "b-d-z",
@@ -325,12 +329,12 @@ data:extend({
 		selection_box = { { -2.5, -2.5 }, { 2.5, 2.5 } },
 		damaged_trigger_effect = hit_effects.biter(),
 		impact_category = "organic",
-		corpse = "copper-spitter-spawner-corpse",
+		corpse = "copper-biter-spawner-corpse",
 		dying_explosion = "spitter-spawner-die",
 		max_count_of_owned_units = 7,
 		max_friends_around_to_spawn = 5,
 		absorptions_per_second = { electromagnetic_waves = { absolute = 20, proportional = 0.01 } },
-
+		captured_spawner_entity = "captive-copper-biter-spawner",
 		graphics_set = {
 			animations = {
 				spawner_idle_animation(0, spitter_spawner_tint),
@@ -341,11 +345,11 @@ data:extend({
 		},
 
 		result_units = {
-			{ "small-copper-spitter", { { 0.0, 0.3 }, { 0.3, 0.0 } } },
-			{ "medium-copper-spitter", { { 0.3, 0.0 }, { 0.6, 0.3 }, { 0.7, 0.1 } } },
-			{ "big-copper-spitter", { { 0.6, 0.0 }, { 0.9, 0.3 } } },
-			{ "behemoth-copper-spitter", { { 0.9, 0.0 }, { 0.98, 0.3 } } },
-			{ "leviathan-copper-spitter", { { 0.98, 0.0 }, { 1.0, 0.4 } } },
+			{ "small-copper-biter", { { 0.0, 0.3 }, { 0.3, 0.0 } } },
+			{ "medium-copper-biter", { { 0.3, 0.0 }, { 0.6, 0.3 }, { 0.7, 0.1 } } },
+			{ "big-copper-biter", { { 0.6, 0.0 }, { 0.9, 0.3 } } },
+			{ "behemoth-copper-biter", { { 0.9, 0.0 }, { 0.98, 0.3 } } },
+			{ "leviathan-copper-biter", { { 0.98, 0.0 }, { 1.0, 0.4 } } },
 		},
 
 		spawning_cooldown = { 360, 150 },
@@ -356,10 +360,10 @@ data:extend({
 		--autoplace = enemy_autoplace.enemy_spawner_autoplace("enemy_autoplace_base(0, 8)"),
 
 		autoplace = {
-			control = "copper-spitter-base",
+			control = "copper-biter-base",
 			order = "b[enemy]-a[spawner]",
 			force = "enemy",
-			probability_expression = "enemy_autoplace_base(0, 1)*0.01",
+			probability_expression = "enemy_autoplace_base(0, 1)*0.02",
 			richness_expression = 1,
 		},
 		call_for_help_radius = 50,
@@ -373,7 +377,7 @@ data:extend({
 data:extend({
 	{
 		type = "corpse",
-		name = "copper-spitter-spawner-corpse",
+		name = "copper-biter-spawner-corpse",
 		flags = { "placeable-neutral", "placeable-off-grid", "not-on-map" },
 		icon = "__base__/graphics/icons/spitter-spawner-corpse.png",
 		collision_box = { { -2, -2 }, { 2, 2 } },
@@ -382,7 +386,7 @@ data:extend({
 		dying_speed = 0.015,
 		time_before_removed = 15 * 60 * 60,
 		subgroup = "corpses",
-		order = "c[corpse]-c[copper-spitter-spawner]",
+		order = "c[corpse]-c[copper-biter-spawner]",
 		animation = {
 			spawner_die_animation(0, spitter_spawner_tint),
 			spawner_die_animation(1, spitter_spawner_tint),
@@ -398,10 +402,150 @@ data:extend({
 data:extend({
 	{
 		type = "autoplace-control",
-		name = "copper-spitter-base",
-		localised_name = { "entity-name.copper-spitter-spawner" },
+		name = "copper-biter-base",
+		localised_name = { "entity-name.copper-biter-spawner" },
 		richness = false,
 		order = "b[enemy]-z[white]",
 		category = "enemy",
+	},
+})
+
+-- ----------------------------------------------------------------------
+-- captive-biter-spawner
+-- ----------------------------------------------------------------------
+data:extend({
+	{
+		type = "assembling-machine",
+		name = "captive-copper-biter-spawner",
+		icon = "__space-age__/graphics/icons/captive-biter-spawner.png",
+		subgroup = "agriculture",
+		flags = { "placeable-neutral", "placeable-player", "player-creation", "not-repairable", "not-deconstructable" },
+		collision_box = { { -2.2, -2.2 }, { 2.2, 2.2 } },
+		selection_box = { { -2.5, -2.5 }, { 2.5, 2.5 } },
+		create_ghost_on_death = false,
+		max_health = 350,
+		show_recipe_icon = false,
+		impact_category = "organic",
+		production_health_effect = {
+			not_producing = -1 / 60, -- 5 hp per second
+			producing = 1 / 60, -- 5 hp per second
+		},
+		ignore_output_full = true,
+		alert_icon_shift = util.by_pixel(0, -12),
+		icon_draw_specification = { shift = { 0, -0.3 } },
+		created_effect = {
+			type = "direct",
+			action_delivery = {
+				type = "instant",
+				source_effects = {
+					type = "create-explosion",
+					entity_name = "captive-spawner-explosion-1",
+				},
+			},
+		},
+		dying_explosion = "captive-spawner-explosion-2",
+		dying_trigger_effect = {
+			type = "create-entity",
+			entity_name = "copper-biter-spawner",
+			as_enemy = true,
+			ignore_no_enemies_mode = true,
+			protected = true,
+		},
+		resistances = {
+			{
+				type = "fire",
+				percent = 70,
+			},
+		},
+		surface_conditions = {
+			{
+				property = "pressure",
+				min = 1500,
+				max = 1500,
+			},
+		},
+		fast_replaceable_group = "captive-biter-spawner",
+		graphics_set = {
+			animation = {
+				layers = {
+					util.sprite_load("__space-age__/graphics/entity/captive-spawner/captive-anim", {
+						frame_count = 32,
+						scale = 0.5,
+						animation_speed = 0.4,
+					}),
+					util.sprite_load("__space-age__/graphics/entity/captive-spawner/captive-shadow", {
+						frame_count = 32,
+						scale = 0.5,
+						animation_speed = 0.4,
+						draw_as_shadow = true,
+					}),
+				},
+			},
+			working_visualisations = {
+				{
+					fadeout = true,
+					animation = util.sprite_load("__space-age__/graphics/entity/captive-spawner/captive-fluids", {
+						frame_count = 32,
+						scale = 0.5,
+						tint = { 0.25, 0.44, 0, 1 },
+						animation_speed = 0.4,
+					}),
+				},
+			},
+		},
+		open_sound = sounds.mech_small_open,
+		close_sound = sounds.mech_small_close,
+		working_sound = {
+			sound = { category = "enemy", filename = "__base__/sound/creatures/spawner.ogg", volume = 0.6 },
+			sound_accents = {
+				{
+					sound = {
+						variations = sound_variations(
+							"__space-age__/sound/entity/spawner/spawner-respirator-push",
+							3,
+							0.3
+						),
+						audible_distance_modifier = 0.6,
+					},
+					frame = 1,
+				},
+				{
+					sound = {
+						variations = sound_variations(
+							"__space-age__/sound/entity/spawner/spawner-respirator-pull",
+							3,
+							0.3
+						),
+						audible_distance_modifier = 0.6,
+					},
+					frame = 17,
+				},
+			},
+		},
+		crafting_categories = { "captive-spawner-process" },
+		fixed_recipe = "copper-biter-egg",
+		crafting_speed = 1,
+		energy_source = {
+			type = "burner",
+			fuel_categories = { "food" },
+			effectivity = 1,
+			fuel_inventory_size = 1,
+			emissions_per_minute = { pollution = -1 },
+			burner_usage = "food",
+			light_flicker = {
+				minimum_intensity = 0,
+				maximum_intensity = 0,
+				derivation_change_frequency = 0,
+				derivation_change_deviation = 0,
+				border_fix_speed = 0,
+				minimum_light_size = 0,
+				light_intensity_to_size_coefficient = 0,
+				color = { 0, 0, 0, 1 },
+			},
+		},
+		energy_usage = "100kW",
+		module_slots = 0,
+		allowed_effects = {},
+		enable_logistic_control_behavior = false,
 	},
 })

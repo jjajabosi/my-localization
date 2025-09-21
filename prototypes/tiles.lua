@@ -165,3 +165,10 @@ data:extend({
 		trigger_effect = tile_trigger_effects.concrete_trigger_effect(),
 	},
 })
+-- arig compatibility
+if mods["planetaris-unbounded"] then
+	local item = data.raw.item["wooden-platform"]
+	if item and item.place_as_tile and data.raw.tile["arig-sand"] then
+		table.insert(item.place_as_tile.tile_condition, "arig-sand")
+	end
+end

@@ -2,11 +2,15 @@ local utils = require("__any-planet-start__.utils")
 
 -- agricultural tower by się przydał
 -- spoilage into nutrients
+
+utils.set_packs("engine", { "automation-science-pack" }, 50, 30)
+utils.set_prerequisites("engine", { "steel-processing" })
+utils.set_prerequisites("logistic-science-pack", { "automation-science-pack", "engine" })
+utils.set_prerequisites("jellynut", { "planet-discovery-gleba" })
 utils.set_prerequisites("agriculture", { "steel-processing", "landfill" })
 utils.set_packs("agriculture", { "automation-science-pack" }, 20, 30)
 utils.remove_recipes("agriculture", { "nutrients-from-spoilage" })
 utils.add_recipes("coconut-processing-technology", { "nutrients-from-spoilage" })
-utils.set_prerequisites("fish-breeding", { "automation-science-pack" })
 utils.set_packs("fish-breeding", { "automation-science-pack" }, 25, 30)
 data.raw["technology"]["fish-breeding"].unit = {
 	count = 20,
@@ -18,6 +22,7 @@ data.raw["technology"]["fish-breeding"].unit = {
 utils.set_prerequisites("jellynut", { "planet-discovery-gleba" })
 utils.set_prerequisites("yumako", { "planet-discovery-gleba" })
 utils.set_prerequisites("landfill", { "automation-science-pack" })
+utils.add_prerequisites("automation-science-pack", { "coconut-processing-technology" })
 utils.set_prerequisites("oil-processing", { "deep_sea_oil_extraction" })
 utils.set_trigger("oil-processing", { type = "mine-entity", entity = "methane" })
 utils.set_packs("landfill", { "automation-science-pack" }, 10, 30)
@@ -36,6 +41,45 @@ utils.remove_recipes("pelagos-science-pack", { "pelagos-biolubricant", "pelagos-
 utils.add_recipes("lubricant", { "pelagos-biolubricant" })
 utils.add_recipes("processing-unit", { "pelagos-processing-unit" })
 utils.add_recipes("battery", { "pelagos-battery" })
+
+data:extend({
+	{
+		type = "recipe",
+		name = "aps-pelagos-automation-science-pack",
+		enabled = false,
+		energy_required = 5,
+		ingredients = {
+			{ type = "item", name = "coconut-husk", amount = 1 },
+			{ type = "item", name = "iron-gear-wheel", amount = 1 },
+		},
+		results = { { type = "item", name = "automation-science-pack", amount = 1 } },
+		crafting_machine_tint = {
+			primary = { r = 1.000, g = 0.0, b = 0.0, a = 1.000 },
+			secondary = { r = 1.000, g = 0.0, b = 0.0, a = 1.000 },
+		},
+		allow_productivity = true,
+	},
+})
+utils.add_recipes("automation-science-pack", { "aps-pelagos-automation-science-pack" })
+data:extend({
+	{
+		type = "recipe",
+		name = "aps-pelagos-logistic-science-pack",
+		enabled = false,
+		energy_required = 6,
+		ingredients = {
+			{ type = "item", name = "engine-unit", amount = 1 },
+			{ type = "item", name = "transport-belt", amount = 1 },
+		},
+		results = { { type = "item", name = "logistic-science-pack", amount = 1 } },
+		crafting_machine_tint = {
+			primary = { r = 0.0, g = 1.0, b = 0.0, a = 1.000 },
+			secondary = { r = 0.0, g = 1.0, b = 0.0, a = 1.000 },
+		},
+		allow_productivity = true,
+	},
+})
+utils.add_recipes("logistic-science-pack", { "aps-pelagos-logistic-science-pack" })
 data:extend({
 	{
 		type = "recipe",
