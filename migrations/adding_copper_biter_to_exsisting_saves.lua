@@ -9,10 +9,10 @@ for _, planet in pairs(game.planets) do
 		surface.regenerate_entity("copper-biter-spawner")
 
 		log(
-			"⚓ Those bastards be eatin’ all our copper! A new enemy, the Copper Biter, has been spotted on Pelagos! ⚓"
+			"⚓ Those bastards are eating all our copper! A new enemy, the Copper Biter, has been spotted on Pelagos! ⚓"
 		)
 		game.print(
-			"⚓ Those bastards be eatin’ all our copper! A new enemy, the Copper Biter, has been spotted on Pelagos! ⚓"
+			"⚓ Those bastards are eating all our copper! A new enemy, the Copper Biter, has been spotted on Pelagos! ⚓"
 		)
 	end
 end
