@@ -4,17 +4,17 @@ Date: 2025-09-21
   Changes:
     - added Any planet start mod support
     - added methane explosives recipe
-    - pelagos biochamber recipe now don't require electronic circuits but 10 extra iron plates instead
+    - pelagos biochamber recipe now doesn't require electronic circuits but 10 extra iron plates instead
     - adjusted titanium sludge and methane patches so they won't overlap in generation
     - introduced copper biter into pelagos terrain generation
     - removed copper ore from pelagos terrain generation. It won't be present on new saves
     - introduced electromagnetic waves - pelagos pollution type created by electrical devices
     - added new biter spawner food - fermented fish
-    - changed ammount of stone mined from Pelagos big rock (30 -> 20)
+    - changed amount of stone mined from Pelagos big rock (30 -> 20)
     - added Pelagos copper stromatolite to terrain generation
     - it is now possible to place flamethrower turret, gun turret and rocket turret on wooden 
-    - flamethrower turret now use fuel value to apply dmg modifier, 
-      and evry fluid with fuel value is included in flamethrower ammo list. 
+    - flamethrower turret now uses fuel value to apply dmg modifier,
+      and every fluid with fuel value is included in flamethrower ammo list.
     - added setting that allows to disable flamethrower fuel value based dmg and fluid inclusion
     - new arig compatibility: you can now place wooden platform on arig sand
 ---------------------------------------------------------------------------------------------------
